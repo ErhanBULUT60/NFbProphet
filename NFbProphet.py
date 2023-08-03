@@ -1,8 +1,5 @@
 import time
 import matplotlib
-import openpyxl
-import numpy as np
-from PIL import Image
 import streamlit as st
 from datetime import date
 import yfinance as yf
