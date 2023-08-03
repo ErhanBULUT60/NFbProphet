@@ -12,12 +12,12 @@ from plotly import graph_objects as go
 import pandas as pd
 from stockstats import StockDataFrame as Sdf
 
-hide_menu_style = """
-        <style>
+#hide_menu_style = """
+       # <style>
         #MainMenu {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+       # </style>
+       # """
+#st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 START = "2022-05-01"
 # TODAY = date.today().strftime("%Y-%m-%d")
