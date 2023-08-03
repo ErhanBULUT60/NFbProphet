@@ -1,1 +1,2 @@
 matplotlib==3.5.2
+yfinance==0.2.26
