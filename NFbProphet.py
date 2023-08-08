@@ -49,9 +49,23 @@ def sdf_data(ticker):
     stock_df = Sdf.retype(data)
     return stock_df['rsi_14']
 
+def rsi_min():
+    rsilist=[]
+    rsilistvalue=[]
+    for stock in stocks:
+        try:
+            if sdf_data(stock).iat[-1] <=55:
+                rsilist.append(stock)
+                rsilistvalue.append(sdf_data(stock).iat[-1])
 
-#for stock in stocks:
-   # print (stock, sdf_data(stock).tail())
+                    #st.write( stock, sdf_data(stock).iat[-1])
+        except:
+            rsilist.append(stock)
+            rsilistvalue.append('NA')
+    data = {'Stock': rsilist,'Rsi': rsilistvalue}
+    print(data,len(rsilist),len(rsilistvalue))
+    df=pd.DataFrame(data).astype(str)
+    return st.write(df)
 
 stock_df = sdf_data(selected_stocks)
 
@@ -111,3 +125,8 @@ st.plotly_chart(fig1)
 st.write('Forecast components')
 fig2 = m.plot_components(forecast)
 st.write(fig2)
+if st.button('Click'):
+     rsi_min()
+else:
+    st.button('No Click')
+
